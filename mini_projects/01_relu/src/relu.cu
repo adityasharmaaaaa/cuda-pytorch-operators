@@ -13,7 +13,7 @@ torch::Tensor relu_forward_cuda(torch::Tensor input){
     TORCH_CHECK(input.is_contiguous(), "input must be contiguous");
     TORCH_CHECK(input.scalar_type()==torch::kFloat32, "input must be float32");
     auto output=torch::empty_like(input);
-    int64_t n n=input.numel();
+    int64_t n=input.numel();
     int threads=256;
     int blocks=(n+threads-1)/threads;
     relu_forward_kernel<<<blocks,threads>>>(
