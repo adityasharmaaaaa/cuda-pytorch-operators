@@ -6,7 +6,7 @@ setup(
     ext_modules=[
         CUDAExtension(
             name="relu",
-            sources=["src/relu.cpp","src/relu.cu"],
+            sources=["src/buildings.cpp","src/relu.cu"],
         )
     ],
     cmdclass={"build_ext":BuildExtension},
