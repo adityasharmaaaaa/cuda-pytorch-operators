@@ -4,7 +4,8 @@
 __global__ void relu_forward_kernel(const float* input, float* output, int N){
     int idx=blockIdx.x*blockDim.x+threadIdx.x;
     if(idx<N){
-        output[idx]=fmaxf(0.0f,input[idx]);
+        float val=input[idx];
+        output[idx]=isnan(val)?val:fmaxf(0.0f, val);
     }
 }
 
