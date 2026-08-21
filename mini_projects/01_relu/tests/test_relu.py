@@ -1,6 +1,6 @@
 import torch
-import sys
-sys.path.insert(0, "../python")
+import os, sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 import relu
 
 def test_custom_relu():
