@@ -1,5 +1,7 @@
 import torch
-import relu 
+import sys
+sys.path.insert(0, "../python")
+import relu
 
 def test_custom_relu():
     input_tensor1=torch.randn(1024,1024,dtype=torch.float32,device="cuda").contiguous()
