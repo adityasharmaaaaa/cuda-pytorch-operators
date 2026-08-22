@@ -2,8 +2,9 @@ import torch
 from torch.autograd import Function
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-import relu
 print(relu.__file__)
+import relu
+
 
 class ReLUFunction(Function):
     @staticmethod
