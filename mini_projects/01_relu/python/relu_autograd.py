@@ -14,6 +14,7 @@ class ReLUFunction(Function):
     @staticmethod
     def backward(ctx, grad_output):
         output, = ctx.saved_tensors
+        grad_output = grad_output.contiguous()
         grad_input = relu.relu_backward(grad_output, output)
         return grad_input
 
